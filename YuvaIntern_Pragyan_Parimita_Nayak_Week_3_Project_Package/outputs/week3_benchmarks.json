@@ -1,0 +1,86 @@
+{
+  "optimization": "Structured channel pruning at 75% retained channels, followed by 3-epoch fine-tuning and TorchScript export",
+  "original_channels": [
+    16,
+    32,
+    64,
+    96
+  ],
+  "optimized_channels": [
+    12,
+    24,
+    48,
+    72
+  ],
+  "baseline": {
+    "parameters": 79461,
+    "estimated_fp32_weight_bytes": 317844,
+    "metrics": {
+      "precision@0.5IoU": 0.09126984126984126,
+      "recall@0.5IoU": 0.06284153005464481,
+      "mean_matched_IoU": 0.5780803010398915,
+      "count_MAE": 1.9666666666666666,
+      "TP": 23,
+      "FP": 229,
+      "FN": 343,
+      "validation_images": 60,
+      "total_ground_truth_objects": 366
+    },
+    "benchmark": {
+      "median_ms": 1.9019194999714273,
+      "mean_ms": 2.4392827639967436,
+      "p95_ms": 5.0706755000078365,
+      "fps_median_based": 525.7846086624713,
+      "threads": 4,
+      "samples": 250
+    }
+  },
+  "optimized_eager": {
+    "parameters": 44909,
+    "estimated_fp32_weight_bytes": 179636,
+    "metrics": {
+      "precision@0.5IoU": 0.14619883040935672,
+      "recall@0.5IoU": 0.1366120218579235,
+      "mean_matched_IoU": 0.6017719388503374,
+      "count_MAE": 1.0,
+      "TP": 50,
+      "FP": 292,
+      "FN": 316,
+      "validation_images": 60,
+      "total_ground_truth_objects": 366
+    },
+    "benchmark": {
+      "median_ms": 1.6536409999616808,
+      "mean_ms": 2.066015976001836,
+      "p95_ms": 4.371829849986846,
+      "fps_median_based": 604.7261769774532,
+      "threads": 4,
+      "samples": 250
+    },
+    "parameter_reduction": 0.43482966486704167,
+    "median_latency_reduction": 0.13054101396692996,
+    "median_speedup": 1.1501405081365905
+  },
+  "optimized_torchscript": {
+    "benchmark": {
+      "median_ms": 0.7710305000045992,
+      "mean_ms": 0.9474191799954497,
+      "p95_ms": 1.7427349000627126,
+      "fps_median_based": 1296.9655545325834,
+      "threads": 4,
+      "samples": 250
+    },
+    "median_speedup": 2.466724078956776
+  },
+  "fine_tuning_train_loss": [
+    0.1949062297741572,
+    0.14483765959739686,
+    0.12141720950603485
+  ],
+  "fine_tuning_val_loss": [
+    0.15462968349456788,
+    0.13284499297539393,
+    0.11168282330036164
+  ],
+  "validation_images": 60
+}
