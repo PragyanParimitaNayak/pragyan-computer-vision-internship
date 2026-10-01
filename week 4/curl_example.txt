@@ -1,0 +1,8 @@
+# Start the API from the project root:
+python app/shelf_api.py
+
+# Health check:
+curl http://127.0.0.1:8000/health
+
+# The analyze endpoint accepts JSON:
+# {"image_base64":"<base64 image>","shelf_id":"A-01"}

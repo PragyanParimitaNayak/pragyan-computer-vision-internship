@@ -1,0 +1,29 @@
+{
+  "requests": 20,
+  "all_status_200": true,
+  "mean_http_response_ms": 5.299058249966038,
+  "median_http_response_ms": 4.346752999936143,
+  "p95_http_response_ms": 6.369330999859812,
+  "detected_counts": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ]
+}
